@@ -53,7 +53,7 @@ namespace DotNetCoreSqlDb
 
             app.UseAuthorization();
             
-            #region csp
+            /*#region csp
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add("Content-Security-Policy", "default-src 'self' *.azurewebsites.net; style-src 'self' https://stackpath.bootstrapcdn.com/; script-src 'Self' 'unsafe-inline' https://stackpath.bootstrapcdn.com/ https://cdnjs.cloudflare.com; img-src data:");
