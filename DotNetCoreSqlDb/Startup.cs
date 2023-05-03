@@ -61,6 +61,14 @@ namespace DotNetCoreSqlDb
             });
             #endregion
 
+            #region vulnCookie
+            app.UseCookiePolicy(
+            new CookiePolicyOptions
+            {
+                Secure = CookieSecurePolicy.Always
+            });
+            #endregion
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
