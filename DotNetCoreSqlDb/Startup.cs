@@ -53,7 +53,7 @@ namespace DotNetCoreSqlDb
 
             app.UseAuthorization();
             
-            #region csp
+           /** #region csp
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; style-src 'self' https://stackpath.bootstrapcdn.com/; script-src 'Self' 'unsafe-inline' https://stackpath.bootstrapcdn.com/ https://cdnjs.cloudflare.com 'sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' 'sha256-fzFFyH01cBVPYzl16KT40wqjhgPtq6FFUB6ckN2+GGw=' ; img-src data:;frame-ancestors 'none'; form-action 'self'");
@@ -68,7 +68,7 @@ namespace DotNetCoreSqlDb
                 Secure = CookieSecurePolicy.Always
             });
             #endregion
-
+            **/
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
