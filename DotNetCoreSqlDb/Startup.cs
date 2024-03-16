@@ -56,7 +56,7 @@ namespace DotNetCoreSqlDb
            #region csp
             app.Use(async (context, next) =>
             {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; style-src 'self' https://stackpath.bootstrapcdn.com/; script-src 'Self' 'unsafe-inline' https://stackpath.bootstrapcdn.com/ https://cdnjs.cloudflare.com ; img-src 'self' data:");
+                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; style-src 'self' https://stackpath.bootstrapcdn.com/; script-src 'Self' 'unsafe-inline' https://stackpath.bootstrapcdn.com/ https://cdnjs.cloudflare.com ; img-src 'self' data:image/svg+xml");
                 await next();
             });
             #endregion
