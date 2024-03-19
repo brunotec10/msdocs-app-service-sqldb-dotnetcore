@@ -53,20 +53,6 @@ namespace DotNetCoreSqlDb
 
             app.UseAuthorization();
             
-            app.Use(async (context, next) =>​
-
-            {​
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'");​
-                await next();​
-            });​
-            #region csp
-            app.Use(async (context, next) =>​
-            {​
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'");​
-                await next();​
-            });
-            #endregion
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
