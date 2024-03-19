@@ -53,15 +53,6 @@ namespace DotNetCoreSqlDb
 
             app.UseAuthorization();
             
-           #region csp
-            app.Use(async (context, next) =>
-            {
-                context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; style-src 'self' https://stackpath.bootstrapcdn.com/; script-src 'self' 'sha256-B5zLS6+agtge/Sk/CeMAp+Fmq/V+Nnk8XRBQz9Eg7Xk=' 'sha256-uprgzvaZUDGYSlu68ZReh5GYCM96KruqsQItjnN8RZ0=' 'sha256-wWUaDZXboWpnFzhzBk5bDowyUJgmKfIi72KineAaGso=' https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js; img-src data:;frame-ancestors 'none'; form-action 'self'");
-                await next();
-            });
-            #endregion
-
-           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
